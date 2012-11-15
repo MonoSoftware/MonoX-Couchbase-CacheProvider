@@ -205,8 +205,10 @@ namespace MonoSoftware.MonoX.Caching
         /// </summary>
         /// <param name="key">Key of the item that should be removed.</param>
         public void RemoveAll(string key)
-        {            
-            List<string> toRemove = new List<string>(Keys.Where(p => p.ToLowerInvariant().StartsWith(GetCouchBaseCacheKey(key).ToLowerInvariant())));
+        {
+            List<string> toRemove = null;
+            lock (padLockKeysAction)
+                toRemove = new List<string>(Keys.Where(p => p.ToLowerInvariant().StartsWith(GetCouchBaseCacheKey(key).ToLowerInvariant())));
 
             foreach (string item in toRemove)
             {
