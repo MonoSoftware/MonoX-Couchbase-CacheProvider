@@ -161,3 +161,7 @@ pip-log.txt
 
 # Mac crap
 .DS_Store
+/packages/CouchbaseNetClient.1.1.6/lib/net35/Couchbase.dll
+/packages/CouchbaseNetClient.1.1.6/lib/net35/Couchbase.xml
+/packages/CouchbaseNetClient.1.1.6/lib/net35/Enyim.Caching.dll
+/packages/CouchbaseNetClient.1.1.6/lib/net35/Enyim.Caching.xml
